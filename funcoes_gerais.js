@@ -1,7 +1,9 @@
-import{dados,verifValor,getProx,botJoga,endGame,coluna} from "./main.js";
+import {dados,coluna} from "./main.js";
+import {verifValor,getProx} from "./funcoes_player.js";
+import {botJoga} from "./funcoes_bot.js;"
 
 const tabuleiro = document.querySelector("[data-board]");
-const dadoCanto = document.querySelector("[data-cel");
+const dadoCanto = document.querySelector("[data-cel]");
 
 
 
@@ -14,6 +16,13 @@ function trocaClasse(d){
 
 }
 
+const endGame = (c1,c2,c3,c4,c5,c6) => {
+    return boardCheio.some((combination) => {
+        return combination.every((index)=>{
+            return (celulas[index].classList.contains(c1) || celulas[index].classList.contains(c2) || celulas[index].classList.contains(c3) || celulas[index].classList.contains(c4) || celulas[index].classList.contains(c5) || celulas[index].classList.contains(c6))
+        });
+    });
+};
 //Função que ativa ao clicar na célula
 const clicarColuna = (x) => {
     // Botar o dado
@@ -49,6 +58,7 @@ const clicarColuna = (x) => {
         
     }
 }
+
 
 //Função que deleta dados, WIP
 function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
