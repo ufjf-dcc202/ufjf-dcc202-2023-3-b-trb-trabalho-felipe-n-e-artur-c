@@ -1,4 +1,5 @@
-const celulas = document.querySelectorAll("[data-cell]");
+import {coluna2,valorCell2,coluna,valorCell} from "./main.js";
+import {celulas} from "./funcoes_player.js";
 const celulas2 = document.querySelectorAll("[data-cell2]");
 
 
@@ -66,4 +67,4 @@ function botJoga(){
      deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
     }
 
-export{valorBot,botJoga};
+export{valorBot,botJoga,celulas2};

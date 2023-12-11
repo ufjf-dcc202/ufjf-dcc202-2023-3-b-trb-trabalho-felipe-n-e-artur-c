@@ -1,6 +1,8 @@
-import {prox,getProx,startGame,addDado,verifValor} from "./funcoes_player.js";
-import {valorBot,botJoga} from "./funcoes_bot.js";
-import {trocaClasse,clicarColuna,deletaDado} from "./funcoes_gerais.js";
+import {prox,getProx,startGame,addDado,verifValor,celulas,dadoCanto} from "./funcoes_player.js";
+import {valorBot,botJoga,celulas2} from "./funcoes_bot.js";
+import {trocaClasse,clicarColuna,deletaDado,tabuleiro,dadoCanto} from "./funcoes_gerais.js";
+
+const tabuleiro2 = document.querySelector("[data-board2]");
 
 let valorMin = 1;
 let valorMax = 6;
@@ -23,3 +25,5 @@ function intervaloNumRandom(a, b)
 
 //Começa o jogo
 startGame();
+
+export{dados,coluna,coluna2,valorCell,valorCell2,valorMin,valorMax};

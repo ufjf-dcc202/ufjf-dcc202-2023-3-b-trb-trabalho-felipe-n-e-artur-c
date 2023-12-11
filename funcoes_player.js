@@ -1,7 +1,8 @@
+import{dados,coluna,valorCell,valorMin,valorMax} from "./main.js";
+import {dadoCanto,tabuleiro} from "./funcoes_gerais.js";
 let prox;
 const celulas = document.querySelectorAll("[data-cell]");
-const tabuleiro = document.querySelector("[data-board]");
-const dadoCanto = document.querySelector("[data-cel");
+
 
 
 //Gera o número do próximo dado que o player recebe
@@ -78,5 +79,5 @@ const verifValor = (x) => {
     }
 }
 
-export{prox,getProx,startGame,addDado,verifValor};
+export{prox,getProx,startGame,addDado,verifValor,celulas,dadoCanto};
 
