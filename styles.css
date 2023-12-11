@@ -63,32 +63,46 @@ img{
     border-top: none;
 }
 
-/*Soma das Colunas*/
-.soma_coluna{
-    color: white;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
+/*TABELA DE DADOS 2*/
+.board2{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
     align-items: center;
+    grid-template-columns: repeat(3, auto);
 }
 
-.valores{
+.cell2{
+    width: 100px;
+    height: 100px;
+    background: gray;
+    border: 2px solid white;
     display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
+    justify-content: center;
+    align-content: center;
 }
 
-.val_total{
-    margin-top: 10px;
+.cell2:nth-child(1),
+.cell2:nth-child(2),
+.cell2:nth-child(3),
+.cell2:nth-child(4),
+.cell2:nth-child(5),
+.cell2:nth-child(6){
+    border-bottom: none;
+}
+.cell2:nth-child(4),
+.cell2:nth-child(5),
+.cell2:nth-child(6),
+.cell2:nth-child(7),
+.cell2:nth-child(8),
+.cell2:nth-child(9){
+    border-top: none;
 }
 
-.dado-lateral{
-    display: none;
-}
-
-.dado-lateral2{
-    display: none;
-}
 
 
 /*Dado 1*/
@@ -185,3 +199,30 @@ img{
 .cel.d6{
     content: url(assets/dados/dado_6.png);
 }
+
+.dado-lateral{
+    display: none;
+}
+
+.dado-lateral2{
+    display: none;
+}
+
+/*Soma das Colunas*/
+.soma_coluna{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.valores{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.val_total{
+    margin-top: 10px;
+} 
