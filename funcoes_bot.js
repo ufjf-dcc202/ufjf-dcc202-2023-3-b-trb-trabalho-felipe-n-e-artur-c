@@ -1,4 +1,4 @@
-import {coluna2,valorCell2,coluna,valorCell} from "./main.js";
+import {coluna2,valorCell2,coluna,valorCell,intervaloNumRandom} from "./main.js";
 import {celulas} from "./funcoes_player.js";
 const celulas2 = document.querySelectorAll("[data-cell2]");
 
