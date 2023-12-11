@@ -39,5 +39,41 @@ body{
     align-content: center;
 }
 
+/* Tirando as bordas para virar uma coluna */
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3),
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6){
+    border-bottom: none;
+}
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6),
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-top: none;
+}
+
+/*Soma das Colunas*/
+.soma_coluna{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.valores{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.val_total{
+    margin-top: 10px;
+}
 
 
