@@ -1,5 +1,6 @@
-import {} from "./funcoes_player.js";
+import {prox,getProx} from "./funcoes_player.js";
 import {} from "./funcoes_bot.js";
+import {} from "./funcoes_gerais.js";
 
 const celulas = document.querySelectorAll("[data-cell]");
 const tabuleiro = document.querySelector("[data-board]");
@@ -26,4 +27,3 @@ function intervaloNumRandom(a, b)
 }
 
 
-console.log(intervaloNumRandom(valorMin, valorMax));
