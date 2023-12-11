@@ -1,5 +1,5 @@
 import{dados,coluna,valorCell,valorMin,valorMax,intervaloNumRandom} from "./main.js";
-import {dadoCanto,tabuleiro} from "./funcoes_gerais.js";
+import {dadoCanto,tabuleiro,clicarColuna} from "./funcoes_gerais.js";
 let prox;
 const celulas = document.querySelectorAll("[data-cell]");
 
