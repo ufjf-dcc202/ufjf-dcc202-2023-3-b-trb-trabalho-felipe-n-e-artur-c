@@ -90,26 +90,6 @@ img{
     display: none;
 }
 
-/* Mesa onde o dado aparece */
-.cel.d1{
-    content: url(assets/dados/dado_1.png);
-}
-.cel.d2{
-    content: url(assets/dados/dado_2.png);
-}
-.cel.d3{
-    content: url(assets/dados/dado_3.png);
-}
-.cel.d4{
-    content: url(assets/dados/dado_4.png);
-}
-.cel.d5{
-    content: url(assets/dados/dado_5.png);
-}
-.cel.d6{
-    content: url(assets/dados/dado_6.png);
-}
-
 
 /*Dado 1*/
 .board.d1 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
