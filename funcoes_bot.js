@@ -62,3 +62,5 @@ function botJoga(){
      //Começo da ideia de como deletar dados
      deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
     }
+
+export{valorBot,botJoga};
