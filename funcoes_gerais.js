@@ -35,7 +35,7 @@ const clicarColuna = (x) => {
     botJoga();
 
 
-    // Fim de Jogo
+    // Fim de Jogo, WIP
     const acabou = endGame("d1","d2","d3","d4","d5","d6");
     if (acabou === true){
         console.log('acabou rs');
@@ -166,3 +166,5 @@ function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
         const elementoValorTotal = document.getElementById('valorTotal');
         elementoValorTotal.innerHTML = `${coluna[0]-armazenaNegativo[0]+coluna[1]-armazenaNegativo[1]+coluna[2]-armazenaNegativo[2]}`;    
     }
+
+    export{trocaClasse,clicarColuna,deletaDado}
