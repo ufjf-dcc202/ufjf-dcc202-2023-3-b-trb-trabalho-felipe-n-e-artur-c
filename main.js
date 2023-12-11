@@ -19,11 +19,34 @@ let coluna = [0,0,0];
 let valorCell2 = [0,0,0,0,0,0,0,0,0];
 let coluna2 = [0,0,0];
 
+let prox;
+
+const getProx = () => {
+    prox = intervaloNumRandom(valorMin,valorMax);
+}
 
 function intervaloNumRandom(a, b)
 {
     return Math.floor(Math.random() * (b - a + 1)) + a
 }
 
+const startGame = () => {
+    getProx(); //Primeiro valor aleatório 
+    
+    dadoCanto.innerHTML = dadoCanto.classList.add(dados[prox-1]);
+    
+    tabuleiro.classList.add(dados[prox-1]);
+    
+    for(var i=0; i<9; i++)
+    {
+        celulas[i].addEventListener('click', indicePlayer(i), {once: true});
+        celulas[i].addEventListener('click', clicarColuna, {once: true});
+    }
+}
+
+const indicePlayer = (j) =>{
+    console.log(j);
+}
+    
 
 console.log(intervaloNumRandom(valorMin, valorMax));
