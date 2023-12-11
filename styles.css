@@ -23,7 +23,7 @@ img{
 }
 
 /*TABELA DE DADOS*/
-.mesa{
+.board{
     display: grid;
     width: 100%;
     height: 100%;
@@ -90,4 +90,56 @@ img{
     display: none;
 }
 
+/*Dado 1*/
+.board.d1 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_1_apagado.png) !important;
+}
+.board.d1 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d1{
+    content: url(assets/dados/dado_1.png);
+}
 
+/*Dado 2*/
+.board.d2 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_2_apagado.png) !important;
+}
+.board.d2 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d2{
+    content: url(assets/dados/dado_2.png);
+}
+
+/*Dado 3*/
+.board.d3 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_3_apagado.png) !important;
+}
+.board.d3 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d3{
+    content: url(assets/dados/dado_3.png);
+}
+
+/*Dado 4*/
+.board.d4 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_4_apagado.png) !important;
+}
+.board.d4 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d4{
+    content: url(assets/dados/dado_4.png);
+}
+
+/*Dado 5*/
+.board.d5 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_5_apagado.png) !important;
+}
+.board.d5 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d5{
+    content: url(assets/dados/dado_5.png);
+}
+
+/*Dado 6*/
+.board.d6 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover{
+    content:url(assets/dados/dado_6_apagado.png) !important;
+}
+.board.d6 .cell:not(.d1):not(.d2):not(.d3):not(.d4):not(.d5):not(.d6):hover,
+.cell.d6{
+    content: url(assets/dados/dado_6.png);
+}
