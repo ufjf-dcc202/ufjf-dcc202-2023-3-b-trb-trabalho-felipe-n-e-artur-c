@@ -45,3 +45,20 @@ const valorBot = () =>{
     const elementoValorTotal2 = document.getElementById('valorTotal2');
     elementoValorTotal2.innerHTML = `${coluna2[0] + coluna2[1] + coluna2[2]}`;
     }
+
+//Função pra gameplay do bot, WIP
+function botJoga(){
+    let randomCell = intervaloNumRandom(0,8);
+    while (valorCell2[randomCell] != 0){
+        randomCell = intervaloNumRandom(0,8);
+    }
+    let randomDado = intervaloNumRandom(0,5);
+    const cell2 = celulas2[randomCell];
+    cell2.classList.add(dados[randomDado]);
+     valorCell2[randomCell] += randomDado+1;
+        
+     //Soma dos valores do bot!
+     valorBot();
+     //Começo da ideia de como deletar dados
+     deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
+    }
