@@ -1,3 +1,5 @@
+import{dados,verifValor,getProx,botJoga,endGame,coluna} from "./main.js";
+
 const tabuleiro = document.querySelector("[data-board]");
 const dadoCanto = document.querySelector("[data-cel");
 
