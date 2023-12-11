@@ -184,4 +184,4 @@ function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
         elementoValorTotal.innerHTML = `${coluna[0]-armazenaNegativo[0]+coluna[1]-armazenaNegativo[1]+coluna[2]-armazenaNegativo[2]}`;    
     }
 
-    export{trocaClasse,clicarColuna,deletaDado};
+    export{trocaClasse,clicarColuna,deletaDado,tabuleiro,dadoCanto};
