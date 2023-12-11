@@ -1,4 +1,8 @@
 let prox;
+const celulas = document.querySelectorAll("[data-cell]");
+const tabuleiro = document.querySelector("[data-board]");
+const dadoCanto = document.querySelector("[data-cel");
+
 
 //Gera o número do próximo dado que o player recebe
 const getProx = () => {

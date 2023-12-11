@@ -1,3 +1,6 @@
+const celulas = document.querySelectorAll("[data-cell]");
+const celulas2 = document.querySelectorAll("[data-cell2]");
+
 
 //Função que calcula valor do bot, em breve vai ser uma só pra player e bot
 const valorBot = () =>{

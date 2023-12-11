@@ -1,3 +1,8 @@
+const tabuleiro = document.querySelector("[data-board]");
+const dadoCanto = document.querySelector("[data-cel");
+
+
+
 // Definição da função que troca a classe do dado
 function trocaClasse(d){
     for (const i of dados){
