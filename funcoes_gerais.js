@@ -1,4 +1,4 @@
-import {dados,coluna} from "./main.js";
+import {dados,coluna} from "./variaveis_gerais.js";
 import {verifValor,getProx} from "./funcoes_player.js";
 import {botJoga} from "./funcoes_bot.js;"
 
