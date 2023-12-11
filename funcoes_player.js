@@ -74,3 +74,5 @@ const verifValor = (x) => {
     }
 }
 
+export{prox,getProx,startGame,addDado,verifValor};
+
