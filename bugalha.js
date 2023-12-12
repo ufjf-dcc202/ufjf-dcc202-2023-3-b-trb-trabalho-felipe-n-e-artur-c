@@ -4,6 +4,7 @@ const dadoCanto = document.querySelector("[data-cel]");
 const celulas2 = document.querySelectorAll("[data-cell2]");
 const tabuleiro2 = document.querySelector("[data-board2]");
 
+
 function intervaloNumRandom(a, b)
 {
     return Math.floor(Math.random() * (b - a + 1)) + a;
@@ -340,16 +341,12 @@ const clicarColuna = (x) => {
         else if(totalPlayer<totalBot){console.log("bot venceukkkkkkkk");}
         else{console.log("como tu empatou cara me explica")};
 
-        document.addEventListener("DOMContentLoaded",function(){
-            var mod = document.getElementById("modal-win");
-            function abrirModal(modal){
-                modal.style.display = "block";
-                page.style.filter = "brightness(50%)";
-            }
-            
-            abrirModal(mod);
-
-        });
+       var mostrarModal = true;
+       if(mostrarModal)
+       {
+        var modal = document.getElementById('modal-win');
+        modal.style.display = 'block';
+       }
     }
 }
 
