@@ -335,7 +335,7 @@ const clicarColuna = (x) => {
     const totalPlayer = coluna[0] + coluna[1] + coluna[2];
     const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
     if (acabou === true){
-        if(totaLPlayer>totalBot){console.log("player venceu!");}
+        if(totalPlayer>totalBot){console.log("player venceu!");}
         else if(totalPlayer<totalBot){console.log("bot venceukkkkkkkk");}
         else{console.log("como tu empatou cara me explica")};
     }
