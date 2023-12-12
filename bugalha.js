@@ -26,10 +26,10 @@ let coluna = [0,0,0];
 let valorCell2 = [0,0,0,0,0,0,0,0,0];
 let coluna2 = [0,0,0];
 
-const endGame = (c1,c2,c3,c4,c5,c6) => {
+const endGame = (c1,c2,c3,c4,c5,c6,qualPlayer) => {
     return boardCheio.some((combination) => {
         return combination.every((index)=>{
-            return (celulas[index].classList.contains(c1) || celulas[index].classList.contains(c2) || celulas[index].classList.contains(c3) || celulas[index].classList.contains(c4) || celulas[index].classList.contains(c5) || celulas[index].classList.contains(c6))
+            return (qualPlayer[index].classList.contains(c1) || qualPlayer[index].classList.contains(c2) || qualPlayer[index].classList.contains(c3) || qualPlayer[index].classList.contains(c4) || qualPlayer[index].classList.contains(c5) || qualPlayer[index].classList.contains(c6))
         });
     });
 };
@@ -331,10 +331,11 @@ const clicarColuna = (x) => {
     trocaClasse(dadoSerAdicionado);  
 
     // Fim de Jogo
-    const acabou = endGame("d1","d2","d3","d4","d5","d6");
+    const acabou = endGame("d1","d2","d3","d4","d5","d6", celulas);
+    const acabouBot = endGame("d1","d2","d3","d4","d5","d6", celulas2);
     const totalPlayer = coluna[0] + coluna[1] + coluna[2];
     const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
-    if (acabou === true){
+    if (acabou === true || acabouBot === true){
         if(totalPlayer>totalBot){console.log("player venceu!");}
         else if(totalPlayer<totalBot){console.log("bot venceukkkkkkkk");}
         else{console.log("como tu empatou cara me explica")};
