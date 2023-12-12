@@ -3,7 +3,7 @@ const tabuleiro = document.querySelector("[data-board]");
 const dadoCanto = document.querySelector("[data-cel]");
 const celulas2 = document.querySelectorAll("[data-cell2]");
 const tabuleiro2 = document.querySelector("[data-board2]");
-
+const msgVitoria = document.querySelector("[data-msg-win]");
 
 function intervaloNumRandom(a, b)
 {
@@ -334,12 +334,14 @@ const clicarColuna = (x) => {
     // Fim de Jogo
     const acabou = endGame("d1","d2","d3","d4","d5","d6", celulas);
     const acabouBot = endGame("d1","d2","d3","d4","d5","d6", celulas2);
+
     const totalPlayer = coluna[0] + coluna[1] + coluna[2];
     const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
+
     if (acabou === true || acabouBot === true){
-        if(totalPlayer>totalBot){console.log("player venceu!");}
-        else if(totalPlayer<totalBot){console.log("bot venceukkkkkkkk");}
-        else{console.log("como tu empatou cara me explica")};
+        if(totalPlayer>totalBot){msgVitoria.innerText = "Player venceu!";}
+        else if(totalPlayer<totalBot){msgVitoria.innerText = "Bot venceu!";}
+        else{msgVitoria.innerText = "Empatou, como pode?";}
 
        var mostrarModal = true;
        if(mostrarModal)
