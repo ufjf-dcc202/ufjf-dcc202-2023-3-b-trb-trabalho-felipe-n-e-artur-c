@@ -3,6 +3,13 @@ const tabuleiro = document.querySelector("[data-board]");
 const dadoCanto = document.querySelector("[data-cel]");
 const celulas2 = document.querySelectorAll("[data-cell2]");
 const tabuleiro2 = document.querySelector("[data-board2]");
+document.addEventListener("DOMContentLoaded",function(){
+    var mod = document.getElementById("modal-win");
+    function abrirModal(modal){
+        modal.style.display = "block";
+        page.style.filter = "brightness(50%)";
+    }
+})
 
 function intervaloNumRandom(a, b)
 {
