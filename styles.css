@@ -49,8 +49,8 @@ img{
 .cell{
     width: 100px;
     height: 100px;
-    background: url(assets/Fundo_Grade.png);
-    border: 2px solid rgb(53, 52, 52);
+    background: grey;
+    border: 2px solid rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -149,7 +149,7 @@ img{
 .cel{
     width: 100px;
     height: 100px;
-    background: url(assets/Mesa.png);
+    background: transparent;
     display: flex;
     justify-content: center;
     align-content: center;
