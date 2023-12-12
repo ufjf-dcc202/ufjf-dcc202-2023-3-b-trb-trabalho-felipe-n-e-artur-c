@@ -116,10 +116,10 @@ function botJoga(){
     //Soma dos valores do bot!
     valorBot();
     //Começo da ideia de como deletar dados
-    deletaDado(celulas,randomCell,valorCell,valorCell2,coluna,'valoresSomados','valorTotal');
+    deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
 }
 
-function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo,valSomaInimigo,valTotalInimigo){
+function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
     //Começo da ideia de como deletar dados
     let armazenaNegativo = [0,0,0];
     //Coluna 1
@@ -233,13 +233,11 @@ function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo,valSomaInimig
         }
     }
 }
-    if(armazenaNegativo[0]>0 && armazenaNegativo[1]>0 && armazenaNegativo[2]>0){
+    if(armazenaNegativo[0]>0 || armazenaNegativo[1]>0 || armazenaNegativo[2]>0){
         //Imprime valor das colunas do inimigo atualizado
         colInimigo[0]-=armazenaNegativo[0];
         colInimigo[1]-=armazenaNegativo[1];
         colInimigo[2]-=armazenaNegativo[2];
-
-        imprimeValor(colInimigo,valSomaInimigo,valTotalInimigo); 
     }
 }
 
@@ -315,31 +313,31 @@ const clicarColuna = (x) => {
     
     for(var i=0; i<9; i++){
         if(cell===celulas[i]){
-            deletaDado(celulas2,i,valorCell2,valorCell,coluna2,'valoresSomados2','valorTotal2');    
+            deletaDado(celulas2,i,valorCell2,valorCell,coluna2);    
         }
     }
-    imprimeValor(coluna,'valoresSomados','valorTotal');
     
     dadoCanto.innerHTML = dadoCanto.classList.remove(dados[prox-1]);
     
     //Verifica presença de dado e calcula valor de cada coluna
+    botJoga();
+    imprimeValor(coluna2,'valoresSomados2','valorTotal2');
+    imprimeValor(coluna,'valoresSomados','valorTotal');
 
     getProx();
     dadoCanto.innerHTML = dadoCanto.classList.add(dados[prox-1]); 
 
     //Troca classe
-    trocaClasse(dadoSerAdicionado);
-
-    //Bot joga
-    botJoga();
-    imprimeValor(coluna2,'valoresSomados2','valorTotal2');
-
+    trocaClasse(dadoSerAdicionado);  
 
     // Fim de Jogo
     const acabou = endGame("d1","d2","d3","d4","d5","d6");
+    const totalPlayer = coluna[0] + coluna[1] + coluna[2];
+    const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
     if (acabou === true){
-        console.log('acabou rs');
-        
+        if(totaLPlayer>totalBot){console.log("player venceu!");}
+        else if(totalPlayer<totalBot){console.log("bot venceukkkkkkkk");}
+        else{console.log("como tu empatou cara me explica")};
     }
 }
 
