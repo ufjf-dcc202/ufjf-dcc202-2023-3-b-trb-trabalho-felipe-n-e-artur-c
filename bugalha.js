@@ -4,8 +4,6 @@ const dadoCanto = document.querySelector("[data-cel]");
 const celulas2 = document.querySelectorAll("[data-cell2]");
 const tabuleiro2 = document.querySelector("[data-board2]");
 
-console.log(dadoCanto);
-
 function intervaloNumRandom(a, b)
 {
     return Math.floor(Math.random() * (b - a + 1)) + a;
@@ -23,10 +21,6 @@ const boardCheio = [
     [0,1,2,3,4,5,6,7,8]
 ];
 
-const indicePlayer = (j) =>{
-    console.log(j);
-
-}
 let valorCell = [0,0,0,0,0,0,0,0,0];
 let coluna = [0,0,0];
 let valorCell2 = [0,0,0,0,0,0,0,0,0];
@@ -42,6 +36,10 @@ const endGame = (c1,c2,c3,c4,c5,c6) => {
 
 const getProx = () => {
     prox = intervaloNumRandom(valorMin,valorMax);
+}
+
+const indicePlayer = (i) => {
+    deletaDado(celulas2,i,valorCell2,valorCell,coluna2);
 }
 
 const startGame = () => {
@@ -242,10 +240,10 @@ function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
 
         //Imprime valor das colunas do inimigo  
         const elementoValoresSomados = document.getElementById('valoresSomados');
-        elementoValoresSomados.innerHTML = `${coluna[0]-armazenaNegativo[0]} ${coluna[1]-armazenaNegativo[1]} ${coluna[2]-armazenaNegativo[2]}`;
+        elementoValoresSomados.innerHTML = `${colInimigo[0]-armazenaNegativo[0]} ${colInimigo[1]-armazenaNegativo[1]} ${colInimigo[2]-armazenaNegativo[2]}`;
         //Imprime valor total do inimigo
         const elementoValorTotal = document.getElementById('valorTotal');
-        elementoValorTotal.innerHTML = `${coluna[0]-armazenaNegativo[0]+coluna[1]-armazenaNegativo[1]+coluna[2]-armazenaNegativo[2]}`;    
+        elementoValorTotal.innerHTML = `${colInimigo[0]-armazenaNegativo[0]+colInimigo[1]-armazenaNegativo[1]+colInimigo[2]-armazenaNegativo[2]}`;    
     }
 
 
