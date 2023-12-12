@@ -38,9 +38,6 @@ const getProx = () => {
     prox = intervaloNumRandom(valorMin,valorMax);
 }
 
-const indicePlayer = (i) => {
-    deletaDado(celulas2,i,valorCell2,valorCell,coluna2);
-}
 
 const startGame = () => {
 getProx(); //Primeiro valor aleatório 
@@ -50,7 +47,6 @@ dadoCanto.innerHTML = dadoCanto.classList.add(dados[prox-1]);
 tabuleiro.classList.add(dados[prox-1]);
 
     for(var i=0; i<9; i++){
-        celulas[i].addEventListener('click', indicePlayer(i), {once: true});
         celulas[i].addEventListener('click', clicarColuna, {once: true});
     }
     
@@ -309,8 +305,16 @@ const verifValor = (x) => {
 
 
 const clicarColuna = (x) => {
-    // Botar o dado
+    //Deleta dado do bot
     const cell = x.target;
+
+    for(var i=0; i<9; i++){
+        if(cell===celulas[i]){
+            console.log("eita");
+            deletaDado(celulas2,i,valorCell2,valorCell,coluna2);    
+        }
+    }
+    
     let dadoSerAdicionado = prox;
     addDado(cell,dadoSerAdicionado);
     
