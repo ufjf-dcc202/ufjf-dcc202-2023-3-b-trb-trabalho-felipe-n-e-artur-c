@@ -201,3 +201,41 @@ img{
 .val_total{
     margin-top: 10px;
 } 
+
+.modal {
+    width: 40%;
+    height: fit-content;
+    background-color: #fff;
+    position: fixed;
+    left: 30%;
+    top: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    padding-bottom: 20px;
+    background-image: linear-gradient(#e21616, rgb(112, 8, 8));
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.ModalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+h2{
+    color: white;
+}
+
+.botao button{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Silkscreen', sans-serif;
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+    
+}
