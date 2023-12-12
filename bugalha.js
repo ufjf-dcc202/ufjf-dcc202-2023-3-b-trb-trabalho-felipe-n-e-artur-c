@@ -56,6 +56,14 @@ function addDado(cel1,dadoRandom){
     cel1.classList.add(dados[dadoRandom-1]);
 }
 
+function imprimeValor(colAlvo,valSoma,valTotal){
+    //Imprime valor das colunas do inimigo  
+    const elementoValoresSomados = document.getElementById(valSoma);
+    elementoValoresSomados.innerHTML = `${colAlvo[0]} ${colAlvo[1]} ${colAlvo[2]}`;
+    //Imprime valor total do inimigo
+    const elementoValorTotal = document.getElementById(valTotal);
+    elementoValorTotal.innerHTML = `${colAlvo[0]+colAlvo[1]+colAlvo[2]}`;
+}
 
 const valorBot = () =>{
     //Coluna 1
@@ -93,14 +101,6 @@ const valorBot = () =>{
         if (valorCell2[2] === valorCell2[5] && valorCell2[5] === valorCell2[8]){
             coluna2[2] = 3*valorCell2[2] + 3*valorCell2[5] + 3*valorCell2[8];
         }  
-
-
-//Imprime valor de cada coluna
-const elementoValoresSomados2 = document.getElementById('valoresSomados2');
-elementoValoresSomados2.innerHTML = `${coluna2[0]} ${coluna2[1]} ${coluna2[2]}`;
-//Imprime valor total
-const elementoValorTotal2 = document.getElementById('valorTotal2');
-elementoValorTotal2.innerHTML = `${coluna2[0] + coluna2[1] + coluna2[2]}`;
 }
 
 function botJoga(){
@@ -116,10 +116,10 @@ function botJoga(){
     //Soma dos valores do bot!
     valorBot();
     //Começo da ideia de como deletar dados
-    deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
+    deletaDado(celulas,randomCell,valorCell,valorCell2,coluna,'valoresSomados','valorTotal');
 }
 
-function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
+function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo,valSomaInimigo,valTotalInimigo){
     //Começo da ideia de como deletar dados
     let armazenaNegativo = [0,0,0];
     //Coluna 1
@@ -233,14 +233,15 @@ function deletaDado(celInimigo,indice,valInimigo,valMeu,colInimigo){
         }
     }
 }
+    if(armazenaNegativo[0]>0 && armazenaNegativo[1]>0 && armazenaNegativo[2]>0){
+        //Imprime valor das colunas do inimigo atualizado
+        colInimigo[0]-=armazenaNegativo[0];
+        colInimigo[1]-=armazenaNegativo[1];
+        colInimigo[2]-=armazenaNegativo[2];
 
-        //Imprime valor das colunas do inimigo  
-        const elementoValoresSomados = document.getElementById('valoresSomados');
-        elementoValoresSomados.innerHTML = `${colInimigo[0]-armazenaNegativo[0]} ${colInimigo[1]-armazenaNegativo[1]} ${colInimigo[2]-armazenaNegativo[2]}`;
-        //Imprime valor total do inimigo
-        const elementoValorTotal = document.getElementById('valorTotal');
-        elementoValorTotal.innerHTML = `${colInimigo[0]-armazenaNegativo[0]+colInimigo[1]-armazenaNegativo[1]+colInimigo[2]-armazenaNegativo[2]}`;    
+        imprimeValor(colInimigo,valSomaInimigo,valTotalInimigo); 
     }
+}
 
 
 
@@ -307,27 +308,21 @@ const verifValor = (x) => {
 const clicarColuna = (x) => {
     //Deleta dado do bot
     const cell = x.target;
-
-    for(var i=0; i<9; i++){
-        if(cell===celulas[i]){
-            console.log("eita");
-            deletaDado(celulas2,i,valorCell2,valorCell,coluna2);    
-        }
-    }
-    
     let dadoSerAdicionado = prox;
     addDado(cell,dadoSerAdicionado);
+
+    verifValor(x);
     
-    //Começo da ideia de como deletar dados
-    //deletaDado(celulas2,indexApagar,valorCell2);
-    
-    //OBS: descobrir como saber o index da célula clicada
-    
+    for(var i=0; i<9; i++){
+        if(cell===celulas[i]){
+            deletaDado(celulas2,i,valorCell2,valorCell,coluna2,'valoresSomados2','valorTotal2');    
+        }
+    }
+    imprimeValor(coluna,'valoresSomados','valorTotal');
     
     dadoCanto.innerHTML = dadoCanto.classList.remove(dados[prox-1]);
     
     //Verifica presença de dado e calcula valor de cada coluna
-    verifValor(x);
 
     getProx();
     dadoCanto.innerHTML = dadoCanto.classList.add(dados[prox-1]); 
@@ -337,6 +332,7 @@ const clicarColuna = (x) => {
 
     //Bot joga
     botJoga();
+    imprimeValor(coluna2,'valoresSomados2','valorTotal2');
 
 
     // Fim de Jogo
