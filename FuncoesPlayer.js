@@ -9,7 +9,6 @@ const verifValor = (x) => {
     //Adicionando valor a cada célula individual
     for(let i=0; i<9; i++){
         if (x.target === celulas[i]){
-            valorCell[i] = 0;
             valorCell[i] = prox; 
         }
     }
