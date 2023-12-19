@@ -1,6 +1,7 @@
 import {prox} from "./bugalha.js";
 
 const celulas = document.querySelectorAll("[data-cell]");
+const dadoCanto = document.querySelector("[data-cel]");
 
 let valorCell = [0,0,0,0,0,0,0,0,0];
 let coluna = [0,0,0];
