@@ -213,7 +213,7 @@ const clicarColuna = (x) => {
     dadoCanto.innerHTML = dadoCanto.classList.remove(dados[prox-1]);
     
     //Verificação fim de jogo player
-    const acabou = endGame("d1","d2","d3","d4","d5","d6", celulas);
+    const acabou = endGame("d1","d2","d3","d4","d5","d6",celulas);
     
     if (acabou === true){
         const totalPlayer = coluna[0] + coluna[1] + coluna[2];
@@ -228,6 +228,8 @@ const clicarColuna = (x) => {
         var modal = document.getElementById('modal-win');
         modal.style.display = 'block';
        }
+
+       return;
     }
 
     //Verifica presença de dado e calcula valor de cada coluna
