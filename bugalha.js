@@ -203,7 +203,6 @@ const clicarColuna = (x) => {
     addDado(cell,dadoSerAdicionado);
 
     verifValor(x);
-    
     for(var i=0; i<9; i++){
         if(cell===celulas[i]){
             deletaDado(celulas2,i,valorCell2,valorCell,coluna2);    
@@ -236,7 +235,7 @@ const clicarColuna = (x) => {
     botJoga();
     imprimeValor(coluna2,'valoresSomados2','valorTotal2');
     imprimeValor(coluna,'valoresSomados','valorTotal');
-
+    for (let i = 0; i<3; i++){console.log(coluna[i]);}
     getProx();
     dadoCanto.innerHTML = dadoCanto.classList.add(dados[prox-1]); 
 
