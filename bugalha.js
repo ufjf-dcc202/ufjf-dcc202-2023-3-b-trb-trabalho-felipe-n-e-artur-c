@@ -231,6 +231,8 @@ const clicarColuna = (x) => {
 
     //Verifica presença de dado e calcula valor de cada coluna
     botJoga();
+    verifValor(x);
+    for(let i = 0; i<3; i++){console.log(coluna[i]);}
     imprimeValor(coluna2,'valoresSomados2','valorTotal2');
     imprimeValor(coluna,'valoresSomados','valorTotal');
     getProx();
