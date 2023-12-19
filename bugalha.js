@@ -227,8 +227,6 @@ const clicarColuna = (x) => {
         var modal = document.getElementById('modal-win');
         modal.style.display = 'block';
        }
-
-       return;
     }
 
     //Verifica presença de dado e calcula valor de cada coluna
