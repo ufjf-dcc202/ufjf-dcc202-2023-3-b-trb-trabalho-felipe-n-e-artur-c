@@ -10,6 +10,7 @@ body{
     background: black;
     font-family: 'Silkscreen', sans-serif;
     background-image: linear-gradient(#3d3c3c, rgb(0, 0, 0));
+    background: url(assets/Fundo.gif);
 }
 
 /*CÉLULA DA GRADE*/
