@@ -320,6 +320,24 @@ const clicarColuna = (x) => {
     
     dadoCanto.innerHTML = dadoCanto.classList.remove(dados[prox-1]);
     
+    //Verificação fim de jogo player
+    const acabou = endGame("d1","d2","d3","d4","d5","d6", celulas);
+    
+    if (acabou === true){
+        const totalPlayer = coluna[0] + coluna[1] + coluna[2];
+        const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
+        if(totalPlayer>totalBot){msgVitoria.innerText = "Player venceu!";}
+        else if(totalPlayer<totalBot){msgVitoria.innerText = "Bot venceu!";}
+        else{msgVitoria.innerText = "Empatou, como pode?";}
+
+       var mostrarModal = true;
+       if(mostrarModal)
+       {
+        var modal = document.getElementById('modal-win');
+        modal.style.display = 'block';
+       }
+    }
+
     //Verifica presença de dado e calcula valor de cada coluna
     botJoga();
     imprimeValor(coluna2,'valoresSomados2','valorTotal2');
@@ -331,14 +349,12 @@ const clicarColuna = (x) => {
     //Troca classe
     trocaClasse(dadoSerAdicionado);  
 
-    // Fim de Jogo
-    const acabou = endGame("d1","d2","d3","d4","d5","d6", celulas);
+    // Verificação fim de Jogo bot
     const acabouBot = endGame("d1","d2","d3","d4","d5","d6", celulas2);
-
-    const totalPlayer = coluna[0] + coluna[1] + coluna[2];
-    const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
-
-    if (acabou === true || acabouBot === true){
+ 
+    if (acabouBot === true){
+        const totalPlayer = coluna[0] + coluna[1] + coluna[2];
+        const totalBot = coluna2[0] + coluna2[1] + coluna2[2];
         if(totalPlayer>totalBot){msgVitoria.innerText = "Player venceu!";}
         else if(totalPlayer<totalBot){msgVitoria.innerText = "Bot venceu!";}
         else{msgVitoria.innerText = "Empatou, como pode?";}
