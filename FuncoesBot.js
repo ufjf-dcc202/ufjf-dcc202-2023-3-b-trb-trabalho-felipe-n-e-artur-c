@@ -58,7 +58,7 @@ function botJoga(){
     
     //Soma dos valores do bot!
     valorBot();
-    //Começo da ideia de como deletar dados
+    //Função que deleta dados!
     deletaDado(celulas,randomCell,valorCell,valorCell2,coluna);
 }
 
